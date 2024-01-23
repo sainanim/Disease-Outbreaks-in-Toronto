@@ -1,0 +1,16 @@
+#### Preamble ####
+# Purpose: Simulate the Disease Outbreak Cases in Toronto
+# Author: Monica Sainani
+# Date: 23 January 2024
+# Contact: monica.sainani@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: none
+
+#### Workplace setup ####
+#install.packages("tidyverse")
+library(tidyverse)
+
+
+#### Simulation ####
+set.seed(1007846823)
+
