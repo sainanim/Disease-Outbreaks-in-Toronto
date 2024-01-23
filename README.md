@@ -4,7 +4,7 @@ In accordance with the Ontario Health Protection and Promotion Act (HPPA), healt
 
 Under the HPPA, Toronto Public Health is mandated to promptly address notifications of suspected and confirmed outbreaks related to gastroenteric and respiratory illnesses. Collaborating closely with healthcare institutions, Toronto Public Health endeavors to prevent and manage institutional outbreaks through the implementation of optimal infection prevention and control measures based on best practices.
 
-#File Structure
+# File Structure
 
 The repo is structured as:
 
@@ -12,3 +12,7 @@ input/data contains the data sources used in analysis including the raw data.
 outputs/data contains the cleaned dataset that was constructed.
 outputs/paper contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper.
 scripts contains the R scripts used to simulate, download and clean data.
+
+# LLM Usage
+
+No LLMs were used for any aspect of this work.
