@@ -35,13 +35,11 @@ library(ggplot2)
 library(tidyverse)
 library(knitr)
 library(here)
-library(readr)
 
 # read in the data
-Disease_data <- read_csv(file = here("cleaned_dataset.csv"),
-  show_col_types = FALSE) 
-
-head(Disease_data)
+Disease_data <- read_csv(file = ("outputs/data/Disease_data.csv"),
+  show_col_types = FALSE
+) 
 ```
 
 # Introduction
@@ -68,18 +66,18 @@ The analysis will focus on key variables, including outbreak settings, types, ca
 ```{r}
 
 # Summary statistics
-summary(Disease_data)
+summary(disease_data)
 
 # Exploratory Data Analysis (EDA)
 # 1. Outbreak Frequency Over Time
-ggplot(Disease_data, aes(x = Date.Outbreak.Began)) +
+ggplot(disease_data, aes(x = Date.Outbreak.Began)) +
   geom_bar(stat = "count", fill = "skyblue") +
   labs(title = "Outbreak Frequency Over Time", x = "Date", y = "Number of Outbreaks")
 
 ##The time series plot reveals patterns in the frequency of outbreaks over time. Peaks or clusters might suggest periods of increased vulnerability or specific events triggering outbreaks, providing valuable information for targeted intervention and resource allocation.
 
 # 2. Outbreak Types Distribution
-ggplot(Disease_data, aes(x = Type.of.Outbreak, fill = Type.of.Outbreak)) +
+ggplot(disease_data, aes(x = Type.of.Outbreak, fill = Type.of.Outbreak)) +
   geom_bar() +
   labs(title = "Distribution of Outbreak Types", x = "Outbreak Type", y = "Frequency") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -87,7 +85,7 @@ ggplot(Disease_data, aes(x = Type.of.Outbreak, fill = Type.of.Outbreak)) +
 ##The bar plot illustrates the distribution of outbreak types, offering insights into the prevalence of respiratory or gastroenteric outbreaks. This information is crucial for tailoring public health strategies, as different outbreak types may require distinct preventive measures and control strategies.
 
 # 3. Causative Agents Analysis
-ggplot(Disease_data, aes(x = Causative.Agent.1, fill = Causative.Agent.1)) +
+ggplot(disease_data, aes(x = Causative.Agent.1, fill = Causative.Agent.1)) +
   geom_bar() +
   labs(title = "Distribution of Causative Agents", x = "Causative Agent", y = "Frequency") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
